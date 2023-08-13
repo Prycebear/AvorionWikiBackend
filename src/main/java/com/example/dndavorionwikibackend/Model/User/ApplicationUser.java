@@ -29,6 +29,6 @@ public class ApplicationUser {
     private String userRole;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "USER_TO_CHARACTER", referencedColumnName = "")
+    @JoinColumn(name = "CHARACTER_ID")
     private Set<PlayerCharacter> characters;
 }

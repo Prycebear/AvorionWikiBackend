@@ -1,6 +1,7 @@
 package com.example.dndavorionwikibackend.Model.Locations;
 
 import com.example.dndavorionwikibackend.Model.Characters.NonPlayerCharacter;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -13,6 +14,13 @@ public class Locations extends LocationSuper{
     @OneToOne
     @JoinColumn(name = "LOCATION_LEADER", referencedColumnName = "CHARACTER_ID")
     private NonPlayerCharacter nonPlayerCharacter;
+
+    @Column(name = "LOCATION_TYPE")
+    private String type;
+
+
+
+
 
 
 }

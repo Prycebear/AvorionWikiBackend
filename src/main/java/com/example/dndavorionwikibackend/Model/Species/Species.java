@@ -6,18 +6,20 @@ import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 
 import java.util.Set;
 
 @Entity
-@Table(name = "Species")
+@Table(name = "SPECIES")
 public class Species {
 
     @Id
@@ -33,12 +35,12 @@ public class Species {
     @Column(name = "SPECIES_DESCRIPTION")
     private String speciesDescription;
 
-    @ManyToMany
-    @JoinColumn(name = "PLAYER_CHARACTER_SPECIES")
-    private Set<PlayerCharacter> playerCharacters;
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CHARACTER_ID")
+    private Set<PlayerCharacter> playerCharactersSpecies;
 
-    @ManyToMany
-    @JoinColumn(name = "NP_CHARACTER_SPECIES")
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CHARACTER_ID")
     private Set<NonPlayerCharacter> NPCharacters;
 
     public long getSpeciesId() {
@@ -65,12 +67,12 @@ public class Species {
         this.speciesDescription = speciesDescription;
     }
 
-    public Set<PlayerCharacter> getPlayerCharacters() {
-        return playerCharacters;
+    public Set<PlayerCharacter> getPlayerCharactersSpecies() {
+        return playerCharactersSpecies;
     }
 
-    public void setPlayerCharacters(Set<PlayerCharacter> playerCharacters) {
-        this.playerCharacters = playerCharacters;
+    public void setPlayerCharactersSpecies(Set<PlayerCharacter> playerCharactersSpecies) {
+        this.playerCharactersSpecies = playerCharactersSpecies;
     }
 
     public Set<NonPlayerCharacter> getNPCharacters() {

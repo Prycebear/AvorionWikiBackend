@@ -1,5 +1,6 @@
 package com.example.dndavorionwikibackend.Model.Groups;
 
+import com.example.dndavorionwikibackend.Model.Characters.NonPlayerCharacter;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +19,6 @@ public class GroupSuper {
     private String groupName;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "CHARACTER_ID", referencedColumnName = "")
-    private Character groupLeader;
+    @JoinColumn(name = "CULT_LEADER_ID", referencedColumnName = "")
+    private NonPlayerCharacter groupLeader;
 }
