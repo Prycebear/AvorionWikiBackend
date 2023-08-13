@@ -8,6 +8,7 @@ public class DnDAvorionWikiBackendApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DnDAvorionWikiBackendApplication.class, args);
+        System.out.println("The username is User");
     }
 
 }
