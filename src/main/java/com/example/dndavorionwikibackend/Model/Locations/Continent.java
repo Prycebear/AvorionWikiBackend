@@ -1,5 +1,7 @@
 package com.example.dndavorionwikibackend.Model.Locations;
 
+import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
@@ -11,10 +13,8 @@ import java.util.Set;
 @Table(name = "CONTINENTS")
 public class Continent extends LocationSuper{
 
-    @OneToMany
-    @JoinColumn(name = "NATIONS_IN_CONTINENT", referencedColumnName = "LOCATION_ID")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "LOCATION_ID")
     private Set<Nation> nations;
-
-
 
 }

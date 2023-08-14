@@ -19,19 +19,7 @@ import java.util.Set;
 @Table(name = "PLAYER_CHARACTER")
 public class PlayerCharacter extends CharacterSuper{
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private ApplicationUser owner;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Species playerCharacterSpecies;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    private FantasyRole characterRole;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CHARACTER_GOD")
-    private Gods characterGod;
-
-
-
+    @ManyToOne
+    @JoinColumn(name="USER_ID", nullable=false)
+    private ApplicationUser userId;
 }

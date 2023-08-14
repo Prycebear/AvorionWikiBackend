@@ -1,5 +1,6 @@
 package com.example.dndavorionwikibackend.Model.Characters;
 
+import com.example.dndavorionwikibackend.Model.Gods.Gods;
 import com.example.dndavorionwikibackend.Model.Species.Species;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -23,13 +24,22 @@ public class CharacterSuper {
     @Column(name = "CHARACTER_ID", nullable = false, unique = true)
     private long characterId;
 
+    @Column(name="CHARACTER_NAME")
     private String characterName;
 
-    private String characterBirthDate;
-
-    private String characterDeathDate;
-
+    @Column(name="CHARACTER_DESCRIPTION", columnDefinition = "TEXT")
     private String characterDescription;
+
+    @Column(name="SHORT_CHARACTER_DESCRIPTION", columnDefinition = "TEXT")
+    private String shortCharacterDescription;
+
+    @ManyToOne
+    @JoinColumn(name = "GODS_ID")
+    private Gods god;
+
+    @ManyToOne
+    @JoinColumn(name = "SPECIES_ID")
+    private Species species;
 
 
 

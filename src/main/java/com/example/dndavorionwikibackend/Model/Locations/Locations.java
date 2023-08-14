@@ -11,12 +11,6 @@ import jakarta.persistence.Table;
 @Table(name="LOCATIONS")
 public class Locations extends LocationSuper{
 
-    @OneToOne
-    @JoinColumn(name = "LOCATION_LEADER", referencedColumnName = "CHARACTER_ID")
-    private NonPlayerCharacter nonPlayerCharacter;
-
-    @Column(name = "LOCATION_TYPE")
-    private String type;
 
 
 

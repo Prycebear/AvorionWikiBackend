@@ -1,6 +1,7 @@
 package com.example.dndavorionwikibackend.Model.Locations;
 
 import com.example.dndavorionwikibackend.Model.Characters.NonPlayerCharacter;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
@@ -13,11 +14,9 @@ import java.util.Set;
 @Table(name = "NATION")
 public class Nation extends LocationSuper{
 
-    @OneToMany
-    @JoinColumn(name = "SUBNATIONS_IN_NATION", referencedColumnName = "LOCATION_ID")
-    private Set<SubNation> subnations;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "LOCATION_ID")
+    private Set<SubNation> subNations;
 
-    @OneToOne
-    @JoinColumn(name = "NATION_LEADER", referencedColumnName = "CHARACTER_ID")
-    private NonPlayerCharacter nonPlayerCharacter;
+
 }

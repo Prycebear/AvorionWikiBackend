@@ -22,13 +22,16 @@ public class ApplicationUser {
     @Column(name = "APPLICATION_USER_ID", nullable = false, unique = true)
     private long applicationUserId;
 
+    @Column(name="USERNAME")
     private String username;
 
+    @Column(name="PASSWORD")
     private String password;
 
+    @Column(name="USER_ROLE")
     private String userRole;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "CHARACTER_ID")
-    private Set<PlayerCharacter> characters;
+    private Set<PlayerCharacter> charactersOwned;
 }

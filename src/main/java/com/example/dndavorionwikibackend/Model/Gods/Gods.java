@@ -1,6 +1,7 @@
 package com.example.dndavorionwikibackend.Model.Gods;
 
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,8 +31,8 @@ public class Gods {
 
     private String godLevel;
 
-    @OneToMany
-    @JoinColumn(name = "CHARACTER_GOD")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "CHARACTER_ID")
     private Set<PlayerCharacter> characterGod;
 
 }

@@ -4,6 +4,7 @@ import com.example.dndavorionwikibackend.Model.FantayRole.FantasyRole;
 import com.example.dndavorionwikibackend.Model.Locations.Continent;
 import com.example.dndavorionwikibackend.Model.Locations.LocationSuper;
 import com.example.dndavorionwikibackend.Model.Locations.Locations;
+import com.example.dndavorionwikibackend.Model.Locations.Nation;
 import com.example.dndavorionwikibackend.Model.Species.Species;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,17 +21,8 @@ import java.util.Set;
 @Table(name = "NPC")
 public class NonPlayerCharacter extends CharacterSuper{
 
-    @ManyToOne
-    @JoinColumn(name = "SPECIES_ID")
-    private Species NPCSpecies;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "LOCATION_LEADER")
-    private Locations locations;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "NPCHARACTER_ROLE")
-    private FantasyRole NPCHARACTERRole;
+    @OneToOne(mappedBy = "leaderId")
+    private Continent continentId;
 
 
 
