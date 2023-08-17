@@ -1,5 +1,6 @@
 package com.example.dndavorionwikibackend.Model.Characters;
 
+import com.example.dndavorionwikibackend.Model.Campaign.Session;
 import com.example.dndavorionwikibackend.Model.FantayRole.FantasyRole;
 import com.example.dndavorionwikibackend.Model.Locations.Continent;
 import com.example.dndavorionwikibackend.Model.Locations.LocationSuper;
@@ -23,6 +24,9 @@ public class NonPlayerCharacter extends CharacterSuper{
 
     @OneToOne(mappedBy = "leaderId")
     private Continent continentId;
+
+    @ManyToMany(mappedBy = "nonPlayerCharacters")
+    private Set<Session> sessions;
 
 
 

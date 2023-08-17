@@ -1,4 +1,4 @@
-package com.example.dndavorionwikibackend.Model.User;
+package com.example.dndavorionwikibackend.Model.Campaign;
 
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
 import jakarta.persistence.CascadeType;
@@ -14,24 +14,24 @@ import jakarta.persistence.Table;
 import java.util.Set;
 
 @Entity
-@Table(name = "APPLICATION_USER")
-public class ApplicationUser {
+@Table(name = "CAMPAIGN")
+public class Campaign {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "APPLICATION_USER_ID", nullable = false, unique = true)
-    private long applicationUserId;
+    @Column(name = "CAMPAIGN_ID", nullable = false, unique = true)
+    private long campaignId;
 
-    @Column(name="USERNAME")
-    private String username;
-
-    @Column(name="PASSWORD")
-    private String password;
-
-    @Column(name="USER_ROLE")
-    private String userRole;
+    @Column(name="CAMPAIGN_NAME")
+    private String campaignName;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "CHARACTER_ID")
-    private Set<PlayerCharacter> charactersOwned;
+    @JoinColumn(name = "CAMPAIGN_ID")
+    private Set<Session> sessions;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "CAMPAIGN_ID")
+    private Set<PlayerCharacter> playerCharacters;
+
+
 }
