@@ -45,4 +45,59 @@ public class Gods {
     @JoinColumn(name="CULTS_ID", nullable=false)
     private Cults cults;
 
+    public Long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Long groupId) {
+        this.groupId = groupId;
+    }
+
+    public String getGodsName() {
+        return godsName;
+    }
+
+    public void setGodsName(String godsName) {
+        this.godsName = godsName;
+    }
+
+    public String getGodsDescription() {
+        return godsDescription;
+    }
+
+    public void setGodsDescription(String godsDescription) {
+        this.godsDescription = godsDescription;
+    }
+
+    public String getGodsDomain() {
+        return godsDomain;
+    }
+
+    public void setGodsDomain(String godsDomain) {
+        this.godsDomain = godsDomain;
+    }
+
+    public String getGodLevel() {
+        return godLevel;
+    }
+
+    public void setGodLevel(String godLevel) {
+        this.godLevel = godLevel;
+    }
+
+    public Set<PlayerCharacter> getCharacterGod() {
+        return characterGod;
+    }
+
+    public void setCharacterGod(Set<PlayerCharacter> characterGod) {
+        this.characterGod = characterGod;
+    }
+
+    public Cults getCults() {
+        return cults;
+    }
+
+    public void setCults(Cults cults) {
+        this.cults = cults;
+    }
 }

@@ -38,4 +38,43 @@ public class Species {
     @JoinColumn(name = "SPECIES_ID")
     private Set<PlayerCharacter> characterSpecies;
 
+    public long getSpeciesId() {
+        return speciesId;
+    }
+
+    public void setSpeciesId(long speciesId) {
+        this.speciesId = speciesId;
+    }
+
+    public String getSpeciesName() {
+        return speciesName;
+    }
+
+    public void setSpeciesName(String speciesName) {
+        this.speciesName = speciesName;
+    }
+
+    public String getSpeciesShortDescription() {
+        return speciesShortDescription;
+    }
+
+    public void setSpeciesShortDescription(String speciesShortDescription) {
+        this.speciesShortDescription = speciesShortDescription;
+    }
+
+    public String getSpeciesDescription() {
+        return speciesDescription;
+    }
+
+    public void setSpeciesDescription(String speciesDescription) {
+        this.speciesDescription = speciesDescription;
+    }
+
+    public Set<PlayerCharacter> getCharacterSpecies() {
+        return characterSpecies;
+    }
+
+    public void setCharacterSpecies(Set<PlayerCharacter> characterSpecies) {
+        this.characterSpecies = characterSpecies;
+    }
 }
