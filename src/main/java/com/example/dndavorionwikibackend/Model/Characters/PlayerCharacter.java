@@ -2,6 +2,7 @@ package com.example.dndavorionwikibackend.Model.Characters;
 
 import com.example.dndavorionwikibackend.Model.Campaign.Campaign;
 import com.example.dndavorionwikibackend.Model.User.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
@@ -12,11 +13,12 @@ import jakarta.persistence.Table;
 @Table(name = "PLAYER_CHARACTER")
 public class PlayerCharacter extends CharacterSuper{
 
-    @ManyToOne(optional = true, fetch = FetchType.LAZY)
+
+    @ManyToOne(optional = true)
     @JoinColumn(name="USER_ID")
     private User userId;
 
-    @ManyToOne(optional = true, fetch = FetchType.LAZY)
+    @ManyToOne(optional = true)
     @JoinColumn(name="CAMPAIGN_ID")
     private Campaign campaign;
 

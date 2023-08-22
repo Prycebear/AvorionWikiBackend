@@ -47,8 +47,4 @@ public class SpeciesController {
         return ResponseEntity.ok(species);
     }
 
-    @GetMapping("/test")
-    public String speciesTest(){
-        return "Test";
-    }
 }
