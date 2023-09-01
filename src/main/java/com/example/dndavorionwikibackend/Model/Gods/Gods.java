@@ -4,7 +4,6 @@ import com.example.dndavorionwikibackend.Model.Campaign.Campaign;
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
 import com.example.dndavorionwikibackend.Model.Groups.Cults;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,7 +38,7 @@ public class Gods {
     private String godLevel;
 
     @JsonIgnore
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     @JoinColumn(name = "GODS_ID")
     private Set<PlayerCharacter> characterGod;
 

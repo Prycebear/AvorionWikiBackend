@@ -13,7 +13,7 @@ import java.util.Set;
 @Table(name = "CONTINENTS")
 public class Continent extends LocationSuper{
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     @JoinColumn(name = "LOCATION_ID")
     private Set<Nation> nations;
 

@@ -27,7 +27,7 @@ public class LocationSuper {
     @Column(columnDefinition = "TEXT")
     private String locationDescription;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "CHARACTER_ID", referencedColumnName = "CHARACTER_ID")
     private NonPlayerCharacter leaderId;
 

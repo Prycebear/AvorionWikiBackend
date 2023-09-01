@@ -34,7 +34,7 @@ public class Species {
 
     private String speciesDescription;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     @JoinColumn(name = "SPECIES_ID")
     private Set<PlayerCharacter> characterSpecies;
 

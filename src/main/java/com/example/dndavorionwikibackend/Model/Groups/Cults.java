@@ -14,7 +14,7 @@ import java.util.Set;
 @Table(name = "Cults")
 public class Cults extends GroupSuper{
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     @JoinColumn(name = "CULTS_ID")
     private Set<Gods> cultGods;
 }

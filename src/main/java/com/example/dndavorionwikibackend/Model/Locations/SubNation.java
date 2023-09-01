@@ -14,7 +14,7 @@ import java.util.Set;
 @Table(name="SUBNATION")
 public class SubNation extends LocationSuper{
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     @JoinColumn(name = "LOCATION_ID")
     private Set<Locations> locations;
 }
