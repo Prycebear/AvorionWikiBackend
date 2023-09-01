@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Set;
 
 @CrossOrigin
 @RestController
@@ -49,6 +50,14 @@ public class PlayerCharacterController {
         PlayerCharacter playerCharacter = playerCharacterRepository.findPlayerCharacterByCharacterId(playerCharacterId);
         return ResponseEntity.ok(playerCharacter);
     }
+
+//    @CrossOrigin
+//    @GetMapping("/{speciesName}")
+//    public List<PlayerCharacter> listBySpecies(@PathVariable("speciesId") String speciesName) {
+//        List<PlayerCharacter> listPlayerCharacter = playerCharacterRepository.findPlayerCharactersBySpecies(speciesName);
+//        return listPlayerCharacter;
+//    }
+
 
     @GetMapping("/test")
     public String speciesTest(){

@@ -25,6 +25,9 @@ public class Campaign {
     @Column(name="CAMPAIGN_NAME")
     private String campaignName;
 
+    @Column(name="CAMPAIGN_TYPE")
+    private String campaignType;
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "CAMPAIGN_ID")
     private Set<Session> sessions;
@@ -34,4 +37,43 @@ public class Campaign {
     private Set<PlayerCharacter> playerCharacters;
 
 
+    public long getCampaignId() {
+        return campaignId;
+    }
+
+    public void setCampaignId(long campaignId) {
+        this.campaignId = campaignId;
+    }
+
+    public String getCampaignName() {
+        return campaignName;
+    }
+
+    public void setCampaignName(String campaignName) {
+        this.campaignName = campaignName;
+    }
+
+    public String getCampaignType() {
+        return campaignType;
+    }
+
+    public void setCampaignType(String campaignType) {
+        this.campaignType = campaignType;
+    }
+
+    public Set<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(Set<Session> sessions) {
+        this.sessions = sessions;
+    }
+
+    public Set<PlayerCharacter> getPlayerCharacters() {
+        return playerCharacters;
+    }
+
+    public void setPlayerCharacters(Set<PlayerCharacter> playerCharacters) {
+        this.playerCharacters = playerCharacters;
+    }
 }
