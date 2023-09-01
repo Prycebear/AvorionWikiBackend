@@ -1,6 +1,5 @@
 package com.example.dndavorionwikibackend.Model.Calendar;
 
-import com.example.dndavorionwikibackend.Model.Characters.NonPlayerCharacter;
 import com.example.dndavorionwikibackend.Model.History.History;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

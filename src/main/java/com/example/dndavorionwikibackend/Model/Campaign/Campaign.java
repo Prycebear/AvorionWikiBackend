@@ -1,7 +1,6 @@
 package com.example.dndavorionwikibackend.Model.Campaign;
 
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,11 +27,11 @@ public class Campaign {
     @Column(name="CAMPAIGN_TYPE")
     private String campaignType;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     @JoinColumn(name = "CAMPAIGN_ID")
     private Set<Session> sessions;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     @JoinColumn(name = "CAMPAIGN_ID")
     private Set<PlayerCharacter> playerCharacters;
 

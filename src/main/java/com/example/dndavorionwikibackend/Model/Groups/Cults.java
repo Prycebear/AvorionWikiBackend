@@ -1,8 +1,6 @@
 package com.example.dndavorionwikibackend.Model.Groups;
 
-import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
 import com.example.dndavorionwikibackend.Model.Gods.Gods;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;

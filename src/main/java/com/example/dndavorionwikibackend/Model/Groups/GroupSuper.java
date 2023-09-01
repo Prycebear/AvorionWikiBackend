@@ -1,7 +1,6 @@
 package com.example.dndavorionwikibackend.Model.Groups;
 
 import com.example.dndavorionwikibackend.Model.Characters.NonPlayerCharacter;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

@@ -1,7 +1,6 @@
 package com.example.dndavorionwikibackend.Model.Locations;
 
-import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
-import jakarta.persistence.CascadeType;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;

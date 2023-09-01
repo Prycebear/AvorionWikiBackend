@@ -1,6 +1,5 @@
 package com.example.dndavorionwikibackend.Model.Gods;
 
-import com.example.dndavorionwikibackend.Model.Campaign.Campaign;
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
 import com.example.dndavorionwikibackend.Model.Groups.Cults;
 import com.fasterxml.jackson.annotation.JsonIgnore;

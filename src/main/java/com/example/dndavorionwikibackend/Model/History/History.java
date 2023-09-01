@@ -1,7 +1,6 @@
 package com.example.dndavorionwikibackend.Model.History;
 
 import com.example.dndavorionwikibackend.Model.Calendar.WorldDate;
-import com.example.dndavorionwikibackend.Model.Campaign.Session;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
