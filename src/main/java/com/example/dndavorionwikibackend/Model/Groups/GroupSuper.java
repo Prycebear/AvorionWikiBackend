@@ -21,7 +21,7 @@ public class GroupSuper {
     @Column(name = "GROUP_NAME")
     private String groupName;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "CULT_LEADER_ID", referencedColumnName = "")
     private NonPlayerCharacter groupLeader;
 
