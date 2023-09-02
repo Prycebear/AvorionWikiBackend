@@ -19,7 +19,7 @@ import java.util.Set;
 public class CharacterSuper {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "my_seq_gen")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CHARACTER_ID", nullable = false, unique = true)
     private long characterId;
 
