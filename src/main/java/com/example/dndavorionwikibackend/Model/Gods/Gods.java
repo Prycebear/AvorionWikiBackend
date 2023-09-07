@@ -22,7 +22,7 @@ public class Gods {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "GODS_ID", nullable = false, unique = true)
-    private Long groupId;
+    private Long godsId;
 
     @Column(name = "GODS_NAME")
     private String godsName;
@@ -43,15 +43,15 @@ public class Gods {
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name="CULTS_ID", nullable=false)
+    @JoinColumn(name="CULTS_ID")
     private Cults cults;
 
-    public Long getGroupId() {
-        return groupId;
+    public Long setGodsId() {
+        return godsId;
     }
 
-    public void setGroupId(Long groupId) {
-        this.groupId = groupId;
+    public void setGodsId(Long godsId) {
+        this.godsId = godsId;
     }
 
     public String getGodsName() {

@@ -1,6 +1,7 @@
 package com.example.dndavorionwikibackend.Model.Species;
 
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,6 +29,7 @@ public class Species {
 
     private String speciesDescription;
 
+    @JsonIgnore
     @OneToMany
     @JoinColumn(name = "SPECIES_ID")
     private Set<PlayerCharacter> characterSpecies;
