@@ -1,8 +1,11 @@
 package com.example.dndavorionwikibackend.Model.Locations;
 
 
+import com.example.dndavorionwikibackend.Model.Groups.Cults;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -15,6 +18,11 @@ public class Nation extends LocationSuper{
     @OneToMany
     @JoinColumn(name = "LOCATION_ID")
     private Set<SubNation> subNations;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name="LOCATION_ID")
+    private Continent continent;
 
 
 }
