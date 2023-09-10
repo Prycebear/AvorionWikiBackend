@@ -20,5 +20,11 @@ public class Nation extends LocationSuper{
     private Set<SubNation> subNations;
 
 
+    public Set<SubNation> getSubNations() {
+        return subNations;
+    }
 
+    public void setSubNations(Set<SubNation> subNations) {
+        this.subNations = subNations;
+    }
 }

@@ -31,4 +31,43 @@ public class LocationSuper {
     private NonPlayerCharacter leaderId;
 
 
+    public long getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(long locationId) {
+        this.locationId = locationId;
+    }
+
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
+    }
+
+    public String getShortLocationDescription() {
+        return shortLocationDescription;
+    }
+
+    public void setShortLocationDescription(String shortLocationDescription) {
+        this.shortLocationDescription = shortLocationDescription;
+    }
+
+    public String getLocationDescription() {
+        return locationDescription;
+    }
+
+    public void setLocationDescription(String locationDescription) {
+        this.locationDescription = locationDescription;
+    }
+
+    public NonPlayerCharacter getLeaderId() {
+        return leaderId;
+    }
+
+    public void setLeaderId(NonPlayerCharacter leaderId) {
+        this.leaderId = leaderId;
+    }
 }
