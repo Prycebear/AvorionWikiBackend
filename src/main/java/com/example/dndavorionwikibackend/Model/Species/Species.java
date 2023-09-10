@@ -2,6 +2,7 @@ package com.example.dndavorionwikibackend.Model.Species;
 
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import org.hibernate.annotations.CascadeType;
 
 
 import java.util.Set;
@@ -29,8 +31,8 @@ public class Species {
 
     private String speciesDescription;
 
-    @JsonIgnore
     @OneToMany
+    @JsonManagedReference
     @JoinColumn(name = "SPECIES_ID")
     private Set<PlayerCharacter> characterSpecies;
 

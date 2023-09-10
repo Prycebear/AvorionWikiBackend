@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface GodsRepository extends JpaRepository<Gods, Long> {
 
 
+    Gods findGodsByGodsId(long godsId);
 }
