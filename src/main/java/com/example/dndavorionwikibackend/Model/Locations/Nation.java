@@ -19,10 +19,6 @@ public class Nation extends LocationSuper{
     @JoinColumn(name = "LOCATION_ID")
     private Set<SubNation> subNations;
 
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name="LOCATION_ID")
-    private Continent continent;
 
 
 }
