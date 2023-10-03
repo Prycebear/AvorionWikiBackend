@@ -1,14 +1,10 @@
 package com.example.dndavorionwikibackend.Service.Species;
 
-import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesDTO;
 import com.example.dndavorionwikibackend.Model.Species.Species;
 import com.example.dndavorionwikibackend.Repositories.SpeciesRepositories.SpeciesRepository;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class SpeciesService {
@@ -17,6 +13,10 @@ public class SpeciesService {
 
     public SpeciesService(SpeciesRepository speciesRepository) {
         this.speciesRepository = speciesRepository;
+    }
+
+    public Species save(Species species){
+        return speciesRepository.save(species);
     }
 
     public List<Species> findAll() {

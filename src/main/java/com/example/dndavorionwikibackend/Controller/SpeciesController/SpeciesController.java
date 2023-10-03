@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,11 +32,11 @@ public class SpeciesController {
         this.speciesTranslator = speciesTranslator;
     }
 
-//    @CrossOrigin
-//    @PostMapping("/add")
-//    public void addSpecies(@RequestBody Species species) {
-//        speciesService.save(species);
-//    }
+    @CrossOrigin
+    @PostMapping("/add")
+    public void addSpecies(@RequestBody Species species) {
+        speciesTranslator.speciesToSpeciesDTO(speciesService.save(species));
+    }
 
     @CrossOrigin
     @GetMapping(value = "/all")
