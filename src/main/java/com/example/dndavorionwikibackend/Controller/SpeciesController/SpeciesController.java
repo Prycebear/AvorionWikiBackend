@@ -1,50 +1,55 @@
 package com.example.dndavorionwikibackend.Controller.SpeciesController;
 
 
+import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesDTO;
 import com.example.dndavorionwikibackend.Model.Species.Species;
-import com.example.dndavorionwikibackend.Repositories.SpeciesRepositories.SpeciesRepository;
+import com.example.dndavorionwikibackend.Service.Species.SpeciesService;
+import com.example.dndavorionwikibackend.Translation.SpeciesTranslator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @CrossOrigin
 @RestController
 @RequestMapping("/species")
 public class SpeciesController {
 
-    private final SpeciesRepository speciesRepository;
+    private final SpeciesService speciesService;
 
-    public SpeciesController(SpeciesRepository speciesRepository) {
-        this.speciesRepository = speciesRepository;
+    private final SpeciesTranslator speciesTranslator;
+
+    public SpeciesController(SpeciesService speciesService, SpeciesTranslator speciesTranslator) {
+        this.speciesService = speciesService;
+        this.speciesTranslator = speciesTranslator;
     }
 
-    @CrossOrigin
-    @PostMapping("/add")
-    public void addSpecies(@RequestBody Species species) {
-        speciesRepository.save(species);
-    }
+//    @CrossOrigin
+//    @PostMapping("/add")
+//    public void addSpecies(@RequestBody Species species) {
+//        speciesService.save(species);
+//    }
 
     @CrossOrigin
     @GetMapping(value = "/all")
-    public List<Species> listAll() {
-        List<Species> listSpecies = speciesRepository.findAll();
-
-        return listSpecies;
+    public Set<SpeciesDTO> listAll() {
+        return speciesService.findAll()
+                .stream()
+                .map(speciesTranslator::speciesToSpeciesDTO)
+                .collect(Collectors.toSet());
     }
 
 
     @CrossOrigin
     @GetMapping("/{id}")
-    public ResponseEntity<Species> listById(@PathVariable("id") long speciesId) {
-        Species species = speciesRepository.findSpeciesBySpeciesId(speciesId);
-        return ResponseEntity.ok(species);
+    public ResponseEntity<SpeciesDTO> listById(@PathVariable("id") long speciesId) {
+        return ResponseEntity.ok(speciesTranslator.speciesToSpeciesDTO(speciesService.findById(speciesId)));
     }
 
 }

@@ -11,7 +11,7 @@ import java.util.Set;
 @Repository
 public interface PlayerCharacterRepository extends JpaRepository<PlayerCharacter, Long> {
 
-    PlayerCharacter findPlayerCharacterByCharacterId(long characterId);
+    List<PlayerCharacter> findPlayerCharacterByCharacterId(long characterId);
 
 //    List<PlayerCharacter> findPlayerCharactersByGod(long godsId);
 

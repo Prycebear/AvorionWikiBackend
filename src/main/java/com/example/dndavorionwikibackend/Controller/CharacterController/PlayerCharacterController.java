@@ -32,7 +32,9 @@ public class PlayerCharacterController {
     @PostMapping("/add")
     public void addPlayerCharacter(@RequestBody PlayerCharacter playerCharacter) {
         playerCharacterRepository.save(playerCharacter);
+        System.out.println("Player character added");
     }
+
 
 
     @CrossOrigin
@@ -43,11 +45,10 @@ public class PlayerCharacterController {
         return listPlayerCharacters;
     }
 
-
     @CrossOrigin
     @GetMapping("/{id}")
     public ResponseEntity<PlayerCharacter> listById(@PathVariable("id") long playerCharacterId) {
-        PlayerCharacter playerCharacter = playerCharacterRepository.findPlayerCharacterByCharacterId(playerCharacterId);
+        PlayerCharacter playerCharacter = (PlayerCharacter) playerCharacterRepository.findPlayerCharacterByCharacterId(playerCharacterId);
         return ResponseEntity.ok(playerCharacter);
     }
 

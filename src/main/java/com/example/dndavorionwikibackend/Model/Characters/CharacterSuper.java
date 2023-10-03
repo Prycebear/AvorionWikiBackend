@@ -39,8 +39,7 @@ public class CharacterSuper {
     @JoinColumn(name = "GODS_ID")
     private Gods god;
 
-    @JsonIgnore
-    @ManyToOne(optional = true, fetch = FetchType.LAZY)
+    @ManyToOne(optional = true)
     @JoinColumn(name = "SPECIES_ID")
     private Species species;
 

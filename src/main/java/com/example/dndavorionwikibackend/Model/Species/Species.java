@@ -14,6 +14,7 @@ import jakarta.persistence.Table;
 import org.hibernate.annotations.CascadeType;
 
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -32,7 +33,7 @@ public class Species {
     private String speciesDescription;
 
     @OneToMany
-    @JsonManagedReference
+    @JsonIgnore
     @JoinColumn(name = "SPECIES_ID")
     private Set<PlayerCharacter> characterSpecies;
 
@@ -40,39 +41,19 @@ public class Species {
         return speciesId;
     }
 
-    public void setSpeciesId(long speciesId) {
-        this.speciesId = speciesId;
-    }
-
     public String getSpeciesName() {
         return speciesName;
-    }
-
-    public void setSpeciesName(String speciesName) {
-        this.speciesName = speciesName;
     }
 
     public String getSpeciesShortDescription() {
         return speciesShortDescription;
     }
 
-    public void setSpeciesShortDescription(String speciesShortDescription) {
-        this.speciesShortDescription = speciesShortDescription;
-    }
-
     public String getSpeciesDescription() {
         return speciesDescription;
     }
 
-    public void setSpeciesDescription(String speciesDescription) {
-        this.speciesDescription = speciesDescription;
-    }
-
     public Set<PlayerCharacter> getCharacterSpecies() {
         return characterSpecies;
-    }
-
-    public void setCharacterSpecies(Set<PlayerCharacter> characterSpecies) {
-        this.characterSpecies = characterSpecies;
     }
 }
