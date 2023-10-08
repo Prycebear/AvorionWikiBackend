@@ -5,6 +5,7 @@ import com.example.dndavorionwikibackend.Repositories.SpeciesRepositories.Specie
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SpeciesService {
@@ -15,7 +16,11 @@ public class SpeciesService {
         this.speciesRepository = speciesRepository;
     }
 
-    public Species save(Species species){
+    public Species save(Species species) throws Exception {
+        Optional<Species> savedSpecies = speciesRepository.findById(species.getSpeciesId());
+        if(savedSpecies.isPresent()){
+            throw new Exception("Employee already exist with given name:" + species.getSpeciesName());
+        }
         return speciesRepository.save(species);
     }
 

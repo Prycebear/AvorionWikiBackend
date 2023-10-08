@@ -11,7 +11,6 @@ import com.example.dndavorionwikibackend.Repositories.RoleRepository;
 import com.example.dndavorionwikibackend.Repositories.UserRepository;
 import com.example.dndavorionwikibackend.Security.Jwt.JwtUtils;
 import com.example.dndavorionwikibackend.Security.Services.UserDetailsImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -35,20 +34,21 @@ import java.util.stream.Collectors;
 @RequestMapping("/auth")
 public class AuthController {
 
-    @Autowired
-    AuthenticationManager authenticationManager;
+    final AuthenticationManager authenticationManager;
 
-    @Autowired
-    UserRepository userRepository;
+    final UserRepository userRepository;
 
-    @Autowired
-    RoleRepository roleRepository;
+    final RoleRepository roleRepository;
 
-    @Autowired
     PasswordEncoder passwordEncoder;
 
-    @Autowired
     JwtUtils jwtUtils;
+
+    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository, RoleRepository roleRepository) {
+        this.authenticationManager = authenticationManager;
+        this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
+    }
 
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
@@ -81,6 +81,7 @@ public class AuthController {
         // Create new user's account
         User user = new User(signUpRequest.getUsername(),
                 passwordEncoder.encode(signUpRequest.getPassword()));
+//                "Xandra");
 
         Set<String> strRoles = signUpRequest.getRole();
         Set<Role> roles = new HashSet<>();

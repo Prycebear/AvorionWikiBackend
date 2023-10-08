@@ -34,7 +34,7 @@ public class SpeciesController {
 
     @CrossOrigin
     @PostMapping("/add")
-    public void addSpecies(@RequestBody Species species) {
+    public void addSpecies(@RequestBody Species species) throws Exception {
         speciesTranslator.speciesToSpeciesDTO(speciesService.save(species));
     }
 

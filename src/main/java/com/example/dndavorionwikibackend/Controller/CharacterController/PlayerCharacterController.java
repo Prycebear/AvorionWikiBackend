@@ -2,8 +2,9 @@ package com.example.dndavorionwikibackend.Controller.CharacterController;
 
 
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
-import com.example.dndavorionwikibackend.Model.Species.Species;
 import com.example.dndavorionwikibackend.Repositories.CharacterRepositories.PlayerCharacterRepository;
+import com.example.dndavorionwikibackend.Service.PlayerCharacter.PlayerCharactersService;
+import com.example.dndavorionwikibackend.Translation.PlayerCharacterTranslator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,24 +15,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Set;
 
 @CrossOrigin
 @RestController
 @RequestMapping("/characters/playercharacters")
 public class PlayerCharacterController {
 
-    private final PlayerCharacterRepository playerCharacterRepository;
+    private final PlayerCharactersService playerCharactersService;
 
-    public PlayerCharacterController(PlayerCharacterRepository playerCharacterRepository) {
-        this.playerCharacterRepository = playerCharacterRepository;
+    private final PlayerCharacterTranslator playerCharacterTranslator;
+
+
+    public PlayerCharacterController(PlayerCharactersService playerCharactersService, PlayerCharacterTranslator playerCharacterTranslator, PlayerCharacterRepository playerCharacterRepository) {
+        this.playerCharactersService = playerCharactersService;
+        this.playerCharacterTranslator = playerCharacterTranslator;
     }
 
 
     @CrossOrigin
     @PostMapping("/add")
     public void addPlayerCharacter(@RequestBody PlayerCharacter playerCharacter) {
-        playerCharacterRepository.save(playerCharacter);
+        playerCharactersService.save(playerCharacter);
         System.out.println("Player character added");
     }
 
@@ -40,7 +44,7 @@ public class PlayerCharacterController {
     @CrossOrigin
     @GetMapping(value = "/all")
     public List<PlayerCharacter> listAll() {
-        List<PlayerCharacter> listPlayerCharacters = playerCharacterRepository.findAll();
+        List<PlayerCharacter> listPlayerCharacters = playerCharactersService.findAll();
 
         return listPlayerCharacters;
     }
@@ -48,7 +52,7 @@ public class PlayerCharacterController {
     @CrossOrigin
     @GetMapping("/{id}")
     public ResponseEntity<PlayerCharacter> listById(@PathVariable("id") long playerCharacterId) {
-        PlayerCharacter playerCharacter = (PlayerCharacter) playerCharacterRepository.findPlayerCharacterByCharacterId(playerCharacterId);
+        PlayerCharacter playerCharacter = (PlayerCharacter) playerCharactersService.findById(playerCharacterId);
         return ResponseEntity.ok(playerCharacter);
     }
 
