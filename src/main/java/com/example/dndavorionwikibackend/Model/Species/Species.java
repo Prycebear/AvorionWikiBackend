@@ -40,6 +40,7 @@ public class Species {
     @JoinColumn(name = "SPECIES_ID")
     private Set<PlayerCharacter> characterSpecies;
 
+    @Column(name="SPECIES_IMGLINK", columnDefinition = "TEXT")
     private String speciesImgLink;
 
     public long getSpeciesId() {
