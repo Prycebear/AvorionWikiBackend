@@ -1,4 +1,4 @@
-package com.example.dndavorionwikibackend.Translation;
+package com.example.dndavorionwikibackend.Translation.PlayerCharacterTranslator;
 
 import com.example.dndavorionwikibackend.DTO.CharactersDTO.PlayerCharacterDTO.PlayerCharacterDTO;
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;

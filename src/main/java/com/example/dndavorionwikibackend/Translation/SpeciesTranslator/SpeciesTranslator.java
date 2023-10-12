@@ -1,4 +1,4 @@
-package com.example.dndavorionwikibackend.Translation;
+package com.example.dndavorionwikibackend.Translation.SpeciesTranslator;
 
 import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesDTO;
 import com.example.dndavorionwikibackend.Model.Species.Species;

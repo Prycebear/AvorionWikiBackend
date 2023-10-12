@@ -3,8 +3,8 @@ package com.example.dndavorionwikibackend.Controller.SpeciesController;
 
 import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesDTO;
 import com.example.dndavorionwikibackend.Model.Species.Species;
-import com.example.dndavorionwikibackend.Service.Species.SpeciesService;
-import com.example.dndavorionwikibackend.Translation.SpeciesTranslator;
+import com.example.dndavorionwikibackend.Service.SpeciesService.SpeciesService;
+import com.example.dndavorionwikibackend.Translation.SpeciesTranslator.SpeciesTranslator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -49,9 +48,15 @@ public class SpeciesController {
 
 
     @CrossOrigin
-    @GetMapping("/{id}")
+    @GetMapping("/speciesid/{id}")
     public ResponseEntity<SpeciesDTO> listById(@PathVariable("id") long speciesId) {
         return ResponseEntity.ok(speciesTranslator.speciesToSpeciesDTO(speciesService.findById(speciesId)));
+    }
+
+    @CrossOrigin
+    @GetMapping("/speciesname/{name}")
+    public ResponseEntity<SpeciesDTO> listById(@PathVariable("name") String speciesName) {
+        return ResponseEntity.ok(speciesTranslator.speciesToSpeciesDTO(speciesService.findByName(speciesName)));
     }
 
 }

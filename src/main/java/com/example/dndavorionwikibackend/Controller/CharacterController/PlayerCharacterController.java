@@ -3,8 +3,8 @@ package com.example.dndavorionwikibackend.Controller.CharacterController;
 
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
 import com.example.dndavorionwikibackend.Repositories.CharacterRepositories.PlayerCharacterRepository;
-import com.example.dndavorionwikibackend.Service.PlayerCharacter.PlayerCharactersService;
-import com.example.dndavorionwikibackend.Translation.PlayerCharacterTranslator;
+import com.example.dndavorionwikibackend.Service.PlayerCharacterService.PlayerCharactersService;
+import com.example.dndavorionwikibackend.Translation.PlayerCharacterTranslator.PlayerCharacterTranslator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

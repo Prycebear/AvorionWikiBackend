@@ -1,4 +1,4 @@
-package com.example.dndavorionwikibackend.Service.Species;
+package com.example.dndavorionwikibackend.Service.SpeciesService;
 
 import com.example.dndavorionwikibackend.Model.Species.Species;
 import com.example.dndavorionwikibackend.Repositories.SpeciesRepositories.SpeciesRepository;
@@ -19,7 +19,7 @@ public class SpeciesService {
     public Species save(Species species) throws Exception {
         Optional<Species> savedSpecies = speciesRepository.findById(species.getSpeciesId());
         if(savedSpecies.isPresent()){
-            throw new Exception("Employee already exist with given name:" + species.getSpeciesName());
+            throw new Exception("Species already exist with given name:" + species.getSpeciesName());
         }
         return speciesRepository.save(species);
     }
@@ -30,5 +30,9 @@ public class SpeciesService {
 
     public Species findById(long speciesId) {
         return speciesRepository.findSpeciesBySpeciesId(speciesId);
+    }
+
+    public Species findByName(String speciesName){
+        return speciesRepository.findSpeciesBySpeciesName(speciesName);
     }
 }

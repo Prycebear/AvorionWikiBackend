@@ -12,6 +12,8 @@ public interface SpeciesRepository extends JpaRepository<Species, Long> {
 
     Species findSpeciesBySpeciesId(long speciesId);
 
+    Species findSpeciesBySpeciesName(String speciesName);
+
 
 
 }

@@ -26,16 +26,21 @@ public class Species {
     @Column(name = "SPECIES_ID", nullable = false, unique = true)
     private long speciesId;
 
+    @Column(name="SPECIES_NAME")
     private String speciesName;
 
+    @Column(name="SHORT_SPECIES_DESCRIPTION", columnDefinition = "TEXT")
     private String speciesShortDescription;
 
+    @Column(name="SPECIES_DESCRIPTION", columnDefinition = "TEXT")
     private String speciesDescription;
 
     @OneToMany
     @JsonIgnore
     @JoinColumn(name = "SPECIES_ID")
     private Set<PlayerCharacter> characterSpecies;
+
+    private String speciesImgLink;
 
     public long getSpeciesId() {
         return speciesId;
@@ -55,5 +60,9 @@ public class Species {
 
     public Set<PlayerCharacter> getCharacterSpecies() {
         return characterSpecies;
+    }
+
+    public void setSpeciesImgLink(String speciesImgLink) {
+        this.speciesImgLink = speciesImgLink;
     }
 }

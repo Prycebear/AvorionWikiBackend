@@ -19,6 +19,7 @@ public class SpeciesDTO {
 
     public List<PlayerCharacter> characterSpecies;
 
+    private String speciesImgLink;
 
     public long getSpeciesId() {
         return speciesId;
@@ -58,5 +59,13 @@ public class SpeciesDTO {
 
     public void setCharacterSpecies(List<PlayerCharacter> characterSpecies) {
         this.characterSpecies = characterSpecies;
+    }
+
+    public String getSpeciesImgLink() {
+        return speciesImgLink;
+    }
+
+    public void setSpeciesImgLink(String speciesImgLink) {
+        this.speciesImgLink = speciesImgLink;
     }
 }

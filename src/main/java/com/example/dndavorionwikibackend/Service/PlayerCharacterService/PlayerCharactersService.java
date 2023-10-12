@@ -1,9 +1,7 @@
-package com.example.dndavorionwikibackend.Service.PlayerCharacter;
+package com.example.dndavorionwikibackend.Service.PlayerCharacterService;
 
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
-import com.example.dndavorionwikibackend.Model.Species.Species;
 import com.example.dndavorionwikibackend.Repositories.CharacterRepositories.PlayerCharacterRepository;
-import com.example.dndavorionwikibackend.Repositories.SpeciesRepositories.SpeciesRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
