@@ -63,7 +63,7 @@ public class Species {
         return characterSpecies;
     }
 
-    public void setSpeciesImgLink(String speciesImgLink) {
-        this.speciesImgLink = speciesImgLink;
+    public String getSpeciesImgLink() {
+        return speciesImgLink;
     }
 }
