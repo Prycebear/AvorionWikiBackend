@@ -29,7 +29,7 @@ public class Species {
     @Column(name="SPECIES_NAME")
     private String speciesName;
 
-    @Column(name="SHORT_SPECIES_DESCRIPTION", columnDefinition = "TEXT")
+    @Column(name="SPECIES_DESCRIPTION",columnDefinition = "TEXT")
     private String speciesShortDescription;
 
     @Column(name="SPECIES_DESCRIPTION", columnDefinition = "TEXT")
