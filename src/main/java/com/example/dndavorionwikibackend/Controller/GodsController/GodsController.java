@@ -42,7 +42,7 @@ public class GodsController {
 
     @CrossOrigin
     @GetMapping("/{id}")
-    public ResponseEntity<GodsDTO> listById(@PathVariable("id") long godsId) {
+    public ResponseEntity<GodsDTO> listById(@PathVariable("id") long godsId) throws Exception {
 
         return ResponseEntity.ok(godsTranslator.godsToGodsDTO(godsService.findByGodsId(godsId)));
     }

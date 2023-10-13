@@ -25,7 +25,4 @@ public class GodsDTO {
 
     private String godLevel;
 
-    private Set<PlayerCharacter> characterGod;
-
-    private Cults cults;
 }

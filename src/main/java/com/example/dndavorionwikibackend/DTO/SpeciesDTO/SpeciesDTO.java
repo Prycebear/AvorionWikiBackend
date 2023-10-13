@@ -9,25 +9,15 @@ public class SpeciesDTO {
     public SpeciesDTO() {
     }
 
-    public long speciesId;
-
     public String speciesName;
 
     public String speciesShortDescription;
 
     public String speciesDescription;
 
-    public List<PlayerCharacter> characterSpecies;
 
     private String speciesImgLink;
 
-    public long getSpeciesId() {
-        return speciesId;
-    }
-
-    public void setSpeciesId(long speciesId) {
-        this.speciesId = speciesId;
-    }
 
     public String getSpeciesName() {
         return speciesName;
@@ -53,13 +43,6 @@ public class SpeciesDTO {
         this.speciesDescription = speciesDescription;
     }
 
-    public List<PlayerCharacter> getCharacterSpecies() {
-        return characterSpecies;
-    }
-
-    public void setCharacterSpecies(List<PlayerCharacter> characterSpecies) {
-        this.characterSpecies = characterSpecies;
-    }
 
     public String getSpeciesImgLink() {
         return speciesImgLink;

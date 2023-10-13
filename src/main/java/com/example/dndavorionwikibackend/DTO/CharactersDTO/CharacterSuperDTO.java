@@ -17,7 +17,7 @@ public class CharacterSuperDTO {
 
     private Gods god;
 
-    private Species species;
+//    private Species species;
 
     private String characterImageLink;
 
@@ -69,13 +69,13 @@ public class CharacterSuperDTO {
         this.god = god;
     }
 
-    public Species getSpecies() {
-        return species;
-    }
-
-    public void setSpecies(Species species) {
-        this.species = species;
-    }
+//    public Species getSpecies() {
+//        return species;
+//    }
+//
+//    public void setSpecies(Species species) {
+//        this.species = species;
+//    }
 
     public String getCharacterImageLink() {
         return characterImageLink;

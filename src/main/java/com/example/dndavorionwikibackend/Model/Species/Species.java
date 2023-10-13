@@ -36,11 +36,10 @@ public class Species {
     private String speciesDescription;
 
     @OneToMany
-    @JsonIgnore
     @JoinColumn(name = "SPECIES_ID")
     private Set<PlayerCharacter> characterSpecies;
 
-    @Column(name="SPECIES_IMGLINK", columnDefinition = "TEXT")
+    @Column(name="SPECIES_IMG_LINK", columnDefinition = "TEXT")
     private String speciesImgLink;
 
     public long getSpeciesId() {
