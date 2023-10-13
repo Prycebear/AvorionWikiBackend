@@ -9,6 +9,7 @@ public class SpeciesDTO {
     public SpeciesDTO() {
     }
 
+    private long speciesId;
     public String speciesName;
 
     public String speciesShortDescription;
@@ -18,6 +19,14 @@ public class SpeciesDTO {
 
     private String speciesImgLink;
 
+
+    public long getSpeciesId() {
+        return speciesId;
+    }
+
+    public void setSpeciesId(long speciesId) {
+        this.speciesId = speciesId;
+    }
 
     public String getSpeciesName() {
         return speciesName;
