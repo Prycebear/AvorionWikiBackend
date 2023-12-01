@@ -1,9 +1,7 @@
 package com.example.dndavorionwikibackend.Translation.GodsTranslator;
 
 import com.example.dndavorionwikibackend.DTO.GodsDTO.GodsDTO;
-import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesDTO;
 import com.example.dndavorionwikibackend.Model.Gods.Gods;
-import com.example.dndavorionwikibackend.Model.Species.Species;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
