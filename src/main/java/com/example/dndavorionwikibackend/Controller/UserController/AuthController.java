@@ -40,14 +40,16 @@ public class AuthController {
 
     final RoleRepository roleRepository;
 
-    PasswordEncoder passwordEncoder;
+    final PasswordEncoder passwordEncoder;
 
     JwtUtils jwtUtils;
 
-    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository, RoleRepository roleRepository) {
+    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, JwtUtils jwtUtils) {
         this.authenticationManager = authenticationManager;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.jwtUtils = jwtUtils;
     }
 
     @PostMapping("/signin")
@@ -81,7 +83,6 @@ public class AuthController {
         // Create new user's account
         User user = new User(signUpRequest.getUsername(),
                 passwordEncoder.encode(signUpRequest.getPassword()));
-//                "Xandra");
 
         Set<String> strRoles = signUpRequest.getRole();
         Set<Role> roles = new HashSet<>();
