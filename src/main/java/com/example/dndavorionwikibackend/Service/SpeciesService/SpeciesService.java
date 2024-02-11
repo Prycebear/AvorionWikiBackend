@@ -2,6 +2,7 @@ package com.example.dndavorionwikibackend.Service.SpeciesService;
 
 import com.example.dndavorionwikibackend.Model.Species.Species;
 import com.example.dndavorionwikibackend.Repositories.SpeciesRepositories.SpeciesRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class SpeciesService {
     }
 
     public Species save(Species species) throws Exception {
-        Optional<Species> savedSpecies = speciesRepository.findById(species.getSpeciesId());
+        Optional<Species> savedSpecies = Optional.ofNullable(speciesRepository.findSpeciesBySpeciesName(species.getSpeciesName()));
         if(savedSpecies.isPresent()){
             throw new Exception("Species already exist with given name:" + species.getSpeciesName());
         }

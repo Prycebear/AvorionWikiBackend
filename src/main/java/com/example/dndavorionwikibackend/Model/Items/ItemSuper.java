@@ -14,13 +14,20 @@ public class ItemSuper {
     @Column(name = "ITEM_ID", nullable = false, unique = true)
     private long itemId;
 
+    @Column(name = "ITEM_NAME")
     private String itemName;
 
+    @Column(name = "ITEM_SHORT_DESCRIPTION")
+    private String itemShortDescription;
+
+    @Column(name = "ITEM_DESCRIPTION")
     private String itemDescription;
 
+    @Column(name = "ITEM_VALUE")
     private int value;
 
-    private int totalItemAmount;
+    @Column(name = "ITEM_UNIQUE")
+    private Boolean itemUnique;
 
 
 }

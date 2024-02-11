@@ -17,7 +17,7 @@ public class ContinentService {
     }
 
     public Continent save(Continent continent) throws Exception {
-        Optional<Continent> savedContinent = continentRepository.findById(continent.getLocationId());
+        Optional<Continent> savedContinent = Optional.ofNullable(continentRepository.findContinentByLocationName(continent.getLocationName()));
         if(savedContinent.isPresent()){
             throw new Exception("Continent already exist with given name:" + continent.getLocationName());
         }
