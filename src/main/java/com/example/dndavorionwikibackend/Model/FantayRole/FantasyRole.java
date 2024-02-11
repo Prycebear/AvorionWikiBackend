@@ -19,4 +19,10 @@ public class FantasyRole {
     @Column(name = "ROLE_ID", nullable = false, unique = true)
     private long roleId;
 
+    @Column(name="ROLE_NAME")
+    private String roleName;
+
+    @Column(name="ROLE_DESCRIPTION")
+    private String roleDescription;
+
 }

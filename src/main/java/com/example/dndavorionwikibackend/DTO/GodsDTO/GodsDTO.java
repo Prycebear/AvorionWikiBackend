@@ -15,7 +15,7 @@ import java.util.Set;
 
 public class GodsDTO {
 
-    private Long godsId;
+    private long godsId;
 
     private String godsName;
 
@@ -25,11 +25,11 @@ public class GodsDTO {
 
     private String godLevel;
 
-    public Long getGodsId() {
+    public long getGodsId() {
         return godsId;
     }
 
-    public void setGodsId(Long godsId) {
+    public void setGodsId(long godsId) {
         this.godsId = godsId;
     }
 
