@@ -23,6 +23,7 @@ public class Nation extends LocationSuper{
     @JoinColumn(name = "continent_location_id")
     private Continent continent;
 
+
     public Continent getContinent() {
         return continent;
     }
