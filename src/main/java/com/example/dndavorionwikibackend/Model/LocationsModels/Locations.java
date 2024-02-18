@@ -1,8 +1,10 @@
-package com.example.dndavorionwikibackend.Model.Locations;
+package com.example.dndavorionwikibackend.Model.LocationsModels;
 
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -44,6 +46,7 @@ public class Locations extends LocationSuper{
     private Set<PointOfInterest> poi;
 
     @Column(columnDefinition = "TEXT")
+    @Enumerated(value = EnumType.STRING)
     private LocationType locationType;
 
     public SubNation getSubNation() {

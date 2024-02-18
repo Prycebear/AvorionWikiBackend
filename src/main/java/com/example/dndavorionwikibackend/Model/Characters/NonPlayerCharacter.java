@@ -1,8 +1,7 @@
 package com.example.dndavorionwikibackend.Model.Characters;
 
 import com.example.dndavorionwikibackend.Model.Campaign.Session;
-import com.example.dndavorionwikibackend.Model.Locations.Continent;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.example.dndavorionwikibackend.Model.LocationsModels.Continent;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;

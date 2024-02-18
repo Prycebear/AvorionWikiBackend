@@ -1,7 +1,6 @@
 package com.example.dndavorionwikibackend.Service.LocationService;
 
-import com.example.dndavorionwikibackend.Model.Locations.Continent;
-import com.example.dndavorionwikibackend.Model.Locations.Nation;
+import com.example.dndavorionwikibackend.Model.LocationsModels.Nation;
 import com.example.dndavorionwikibackend.Repositories.LocationRepository.NationRepository;
 import org.springframework.stereotype.Service;
 

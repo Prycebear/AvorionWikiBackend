@@ -1,7 +1,9 @@
-package com.example.dndavorionwikibackend.Model.Locations;
+package com.example.dndavorionwikibackend.Model.LocationsModels;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -9,6 +11,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="POINTOFINTEREST")
 public class PointOfInterest extends LocationSuper{
+
 
     public enum PointOfInterestType{
         Shop,
@@ -25,6 +28,7 @@ public class PointOfInterest extends LocationSuper{
     private Locations locations;
 
     @Column(columnDefinition = "TEXT")
+    @Enumerated(value = EnumType.STRING)
     private PointOfInterestType pointOfInterestType;
 
     public Locations getLocations() {

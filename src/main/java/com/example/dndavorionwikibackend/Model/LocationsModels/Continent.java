@@ -1,4 +1,4 @@
-package com.example.dndavorionwikibackend.Model.Locations;
+package com.example.dndavorionwikibackend.Model.LocationsModels;
 
 
 import jakarta.persistence.Entity;

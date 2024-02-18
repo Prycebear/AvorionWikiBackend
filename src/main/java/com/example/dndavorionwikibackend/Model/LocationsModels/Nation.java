@@ -1,8 +1,6 @@
-package com.example.dndavorionwikibackend.Model.Locations;
+package com.example.dndavorionwikibackend.Model.LocationsModels;
 
 
-import com.example.dndavorionwikibackend.Model.Groups.Cults;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;

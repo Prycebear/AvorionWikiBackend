@@ -2,7 +2,7 @@ package com.example.dndavorionwikibackend.Controller.LocationController;
 
 
 import com.example.dndavorionwikibackend.DTO.LocationDTO.NationsDTO;
-import com.example.dndavorionwikibackend.Model.Locations.Nation;
+import com.example.dndavorionwikibackend.Model.LocationsModels.Nation;
 import com.example.dndavorionwikibackend.Service.LocationService.NationService;
 import com.example.dndavorionwikibackend.Translation.LocationTranslator.NationTranslator;
 import org.springframework.http.ResponseEntity;

@@ -1,9 +1,7 @@
 package com.example.dndavorionwikibackend.Translation.LocationTranslator;
 
-import com.example.dndavorionwikibackend.DTO.LocationDTO.ContinentDTO;
 import com.example.dndavorionwikibackend.DTO.LocationDTO.NationsDTO;
-import com.example.dndavorionwikibackend.Model.Locations.Continent;
-import com.example.dndavorionwikibackend.Model.Locations.Nation;
+import com.example.dndavorionwikibackend.Model.LocationsModels.Nation;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 

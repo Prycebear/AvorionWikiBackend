@@ -2,14 +2,9 @@ package com.example.dndavorionwikibackend.Controller.LocationController;
 
 
 import com.example.dndavorionwikibackend.DTO.LocationDTO.ContinentDTO;
-import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesDTO;
-import com.example.dndavorionwikibackend.Model.Gods.Gods;
-import com.example.dndavorionwikibackend.Model.Locations.Continent;
-import com.example.dndavorionwikibackend.Model.Species.Species;
-import com.example.dndavorionwikibackend.Repositories.LocationRepository.ContinentRepository;
+import com.example.dndavorionwikibackend.Model.LocationsModels.Continent;
 import com.example.dndavorionwikibackend.Service.LocationService.ContinentService;
 import com.example.dndavorionwikibackend.Translation.LocationTranslator.ContinentTranslator;
-import com.example.dndavorionwikibackend.Translation.SpeciesTranslator.SpeciesTranslator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 

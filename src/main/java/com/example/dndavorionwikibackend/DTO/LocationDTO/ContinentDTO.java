@@ -1,6 +1,6 @@
 package com.example.dndavorionwikibackend.DTO.LocationDTO;
 
-import com.example.dndavorionwikibackend.Model.Locations.Nation;
+import com.example.dndavorionwikibackend.Model.LocationsModels.Nation;
 
 import java.util.Set;
 

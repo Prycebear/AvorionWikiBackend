@@ -1,4 +1,4 @@
-package com.example.dndavorionwikibackend.Model.Locations;
+package com.example.dndavorionwikibackend.Model.LocationsModels;
 
 import com.example.dndavorionwikibackend.Model.Characters.NonPlayerCharacter;
 import jakarta.persistence.Column;
