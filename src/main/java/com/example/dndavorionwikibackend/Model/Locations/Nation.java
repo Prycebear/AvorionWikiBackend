@@ -19,6 +19,18 @@ public class Nation extends LocationSuper{
     @JoinColumn(name = "LOCATION_ID")
     private Set<SubNation> subNations;
 
+    @ManyToOne
+    @JoinColumn(name = "continent_location_id")
+    private Continent continent;
+
+    public Continent getContinent() {
+        return continent;
+    }
+
+    public void setContinent(Continent continent) {
+        this.continent = continent;
+    }
+
 
     public Set<SubNation> getSubNations() {
         return subNations;
