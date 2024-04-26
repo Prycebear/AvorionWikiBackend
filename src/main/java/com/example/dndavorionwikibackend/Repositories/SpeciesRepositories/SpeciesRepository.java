@@ -14,6 +14,10 @@ public interface SpeciesRepository extends JpaRepository<Species, Long> {
 
     Species findSpeciesBySpeciesName(String speciesName);
 
+    Species deleteSpeciesBySpeciesId(long speciesId);
+
+    Species deleteSpeciesBySpeciesName(String speciesName);
+
 
 
 }
