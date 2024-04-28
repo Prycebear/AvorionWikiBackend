@@ -5,9 +5,11 @@ import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesDTO;
 import com.example.dndavorionwikibackend.Model.Species.Species;
 import com.example.dndavorionwikibackend.Service.SpeciesService.SpeciesService;
 import com.example.dndavorionwikibackend.Translation.SpeciesTranslator.SpeciesTranslator;
+import jakarta.transaction.Transactional;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -54,9 +56,17 @@ public class SpeciesController {
     }
 
     @CrossOrigin
-    @DeleteMapping("speciesideleteid/{id}")
+    @Transactional
+    @DeleteMapping("/speciesdeletebyid/{id}")
     public ResponseEntity<String> deleteById(@PathVariable("id") long speciesId) {
-        return ResponseEntity.ok("Entity deleted by id " + speciesId);
+        Optional<Species> speciesExist = Optional.ofNullable(this.speciesService.findById(speciesId));
+        if (speciesExist.isPresent()) {
+            this.speciesService.deleteById(speciesId);
+            return ResponseEntity.ok("Deleted species");
+        }else{
+            return ResponseEntity.notFound().build();
+        }
+
     }
 
     @CrossOrigin

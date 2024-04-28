@@ -35,4 +35,10 @@ public class SpeciesService {
     public Species findByName(String speciesName){
         return speciesRepository.findSpeciesBySpeciesName(speciesName);
     }
+
+    public void deleteById(long speciesId) {
+        speciesRepository.deleteSpeciesBySpeciesId(speciesId);
+    }
 }
+
+
