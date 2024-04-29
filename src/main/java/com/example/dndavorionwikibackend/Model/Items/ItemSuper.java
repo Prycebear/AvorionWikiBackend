@@ -20,6 +20,8 @@ public class ItemSuper {
 
     private int value;
 
+    private boolean legendary;
+
     private int totalItemAmount;
 
 
