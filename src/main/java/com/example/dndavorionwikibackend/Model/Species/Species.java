@@ -63,4 +63,25 @@ public class Species {
     public String getSpeciesImgLink() {
         return speciesImgLink;
     }
+
+
+    public void setSpeciesName(String speciesName) {
+        this.speciesName = speciesName;
+    }
+
+    public void setSpeciesShortDescription(String speciesShortDescription) {
+        this.speciesShortDescription = speciesShortDescription;
+    }
+
+    public void setSpeciesDescription(String speciesDescription) {
+        this.speciesDescription = speciesDescription;
+    }
+
+    public void setCharacterSpecies(Set<PlayerCharacter> characterSpecies) {
+        this.characterSpecies = characterSpecies;
+    }
+
+    public void setSpeciesImgLink(String speciesImgLink) {
+        this.speciesImgLink = speciesImgLink;
+    }
 }
