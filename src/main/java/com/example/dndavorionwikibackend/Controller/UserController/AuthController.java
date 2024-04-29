@@ -1,5 +1,6 @@
 package com.example.dndavorionwikibackend.Controller.UserController;
 
+import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesDTO;
 import com.example.dndavorionwikibackend.Model.User.ERole;
 import com.example.dndavorionwikibackend.Model.User.Role;
 import com.example.dndavorionwikibackend.Model.User.User;
@@ -17,11 +18,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;
 import java.util.List;
@@ -93,7 +90,7 @@ public class AuthController {
         } else {
             strRoles.forEach(role -> {
                 switch (role) {
-                    case "admin":
+                    case "ADMIN":
                         Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN);
                         roles.add(adminRole);
 
@@ -111,4 +108,13 @@ public class AuthController {
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
+
+    @GetMapping(value = "/all")
+    public Set<User> getAllUsers(){
+        return userRepository.findAll()
+                .stream()
+                .collect(Collectors.toSet());
+    }
 }
+
+
