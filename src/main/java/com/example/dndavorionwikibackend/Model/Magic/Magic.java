@@ -1,10 +1,10 @@
 package com.example.dndavorionwikibackend.Model.Magic;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.springframework.lang.NonNull;
 
+@Entity
+@Table(name = "MAGIC")
 public class Magic{
 
     public enum MagicType{
@@ -47,36 +47,24 @@ public class Magic{
     }
 
 
-
-    public enum MagicDiceDamage{
-        D1,
-        D2,
-        D4,
-        D6,
-        D8,
-        D10,
-        D12,
-        D20
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MAGIC_ID", nullable = false, unique = true)
     private long magicId;
-
-    private String spellName;
-
-    private String spellDescription;
-
+    @NonNull
+    private String magicName;
+    @NonNull
+    private String magicDescription;
+    @NonNull
     private MagicType magicType;
-
+    @NonNull
     private MagicRange magicRange;
-
+    @NonNull
     private MagicEffect magicEffect;
-
+    @NonNull
     private MagicRadius magicRadius;
 
-    private MagicDiceDamage magicDiceDamage;
+    private int magicDiceDamage;
 
     private int manaCost;
 
@@ -88,20 +76,20 @@ public class Magic{
         this.magicId = magicId;
     }
 
-    public String getSpellName() {
-        return spellName;
+    public String getMagicName() {
+        return magicName;
     }
 
-    public void setSpellName(String spellName) {
-        this.spellName = spellName;
+    public void setMagicName(String magicName) {
+        this.magicName = magicName;
     }
 
-    public String getSpellDescription() {
-        return spellDescription;
+    public String getMagicDescription() {
+        return magicDescription;
     }
 
-    public void setSpellDescription(String spellDescription) {
-        this.spellDescription = spellDescription;
+    public void setMagicDescription(String magicDescription) {
+        this.magicDescription = magicDescription;
     }
 
     public MagicType getMagicType() {
@@ -136,11 +124,11 @@ public class Magic{
         this.magicRadius = magicRadius;
     }
 
-    public MagicDiceDamage getMagicDiceDamage() {
+    public int getMagicDiceDamage() {
         return magicDiceDamage;
     }
 
-    public void setMagicDiceDamage(MagicDiceDamage magicDiceDamage) {
+    public void setMagicDiceDamage(int magicDiceDamage) {
         this.magicDiceDamage = magicDiceDamage;
     }
 

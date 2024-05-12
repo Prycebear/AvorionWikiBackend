@@ -8,14 +8,11 @@ import jakarta.persistence.Id;
 
 public class MagicDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "SPELL_ID", nullable = false, unique = true)
-    private long spellId;
+    private long magicId;
 
-    private String spellName;
+    private String magicName;
 
-    private String spellDescription;
+    private String magicDescription;
 
     private Magic.MagicType magicType;
 
@@ -25,32 +22,32 @@ public class MagicDTO {
 
     private Magic.MagicRadius magicRadius;
 
-    private Magic.MagicDiceDamage magicDiceDamage;
+    private int magicDiceDamage;
 
     private int manaCost;
 
-    public long getSpellId() {
-        return spellId;
+    public long getMagicId() {
+        return magicId;
     }
 
-    public void setSpellId(long spellId) {
-        this.spellId = spellId;
+    public void setMagicId(long magicId) {
+        this.magicId = magicId;
     }
 
-    public String getSpellName() {
-        return spellName;
+    public String getMagicName() {
+        return magicName;
     }
 
-    public void setSpellName(String spellName) {
-        this.spellName = spellName;
+    public void setMagicName(String magicName) {
+        this.magicName = magicName;
     }
 
-    public String getSpellDescription() {
-        return spellDescription;
+    public String getMagicDescription() {
+        return magicDescription;
     }
 
-    public void setSpellDescription(String spellDescription) {
-        this.spellDescription = spellDescription;
+    public void setMagicDescription(String magicDescription) {
+        this.magicDescription = magicDescription;
     }
 
     public Magic.MagicType getMagicType() {
@@ -85,11 +82,11 @@ public class MagicDTO {
         this.magicRadius = magicRadius;
     }
 
-    public Magic.MagicDiceDamage getMagicDiceDamage() {
+    public int getMagicDiceDamage() {
         return magicDiceDamage;
     }
 
-    public void setMagicDiceDamage(Magic.MagicDiceDamage magicDiceDamage) {
+    public void setMagicDiceDamage(int magicDiceDamage) {
         this.magicDiceDamage = magicDiceDamage;
     }
 
