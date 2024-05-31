@@ -2,10 +2,7 @@ package com.example.dndavorionwikibackend.Model.Characters;
 
 import com.example.dndavorionwikibackend.Model.Campaign.Campaign;
 import com.example.dndavorionwikibackend.Model.User.User;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "PLAYER_CHARACTER")
@@ -19,6 +16,10 @@ public class PlayerCharacter extends CharacterSuper{
     @ManyToOne(optional = true)
     @JoinColumn(name="CAMPAIGN_ID")
     private Campaign campaign;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private CharacterStats characterStats;
 
     public User getUserId() {
         return userId;
