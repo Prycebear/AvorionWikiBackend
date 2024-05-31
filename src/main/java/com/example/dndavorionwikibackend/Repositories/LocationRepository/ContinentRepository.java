@@ -6,4 +6,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ContinentRepository extends JpaRepository<Continent, Long> {
+
+    Continent findContinentByLocationId(long locationId);
+
+    Continent findContinentByLocationName(String locationName);
 }

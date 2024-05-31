@@ -40,6 +40,12 @@ public class Species {
     @Column(name="SPECIES_IMG_LINK", columnDefinition = "TEXT")
     private String speciesImgLink;
 
+//    public Species(String speciesName, String speciesShortDescription, String speciesDescription) {
+//        this.speciesName = speciesName;
+//        this.speciesShortDescription = speciesShortDescription;
+//        this.speciesDescription = speciesDescription;
+//    }
+
     public long getSpeciesId() {
         return speciesId;
     }
