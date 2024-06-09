@@ -1,7 +1,7 @@
 package com.example.dndavorionwikibackend.Model.Gods;
 
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
-import com.example.dndavorionwikibackend.Model.Groups.Cults;
+import com.example.dndavorionwikibackend.Model.Groups.Cults.Cults;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,41 +1,22 @@
-package com.example.dndavorionwikibackend.Model.Campaign;
+package com.example.dndavorionwikibackend.DTO.CampaignDTO;
 
+import com.example.dndavorionwikibackend.Model.Campaign.Campaign;
 import com.example.dndavorionwikibackend.Model.Characters.NonPlayerCharacter;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Set;
 
-@Entity
-@Table(name = "SESSION")
-public class Session {
+public class SessionDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "SESSION_ID", nullable = false, unique = true)
+
     private long sessionId;
 
     private String sessionTitle;
 
     private String shortSessionDescription;
 
-    @ManyToOne
-    @JoinColumn(name="CAMPAIGN_ID", nullable=false)
     private Campaign campaign;
 
-    @ManyToMany
-    @JoinTable(
-            name = "NPC_IN_SESSION",
-            joinColumns = @JoinColumn(name = "CHARACTER_ID"),
-            inverseJoinColumns = @JoinColumn(name = "SESSION_ID"))
     private Set<NonPlayerCharacter> nonPlayerCharacters;
 
     public long getSessionId() {

@@ -17,6 +17,7 @@ import java.util.Set;
 @Table(name = "WORLD_DATE")
 public class WorldDate {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "WORLD_DATE_ID", nullable = false, unique = true)
